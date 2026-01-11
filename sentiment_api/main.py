@@ -4,10 +4,27 @@ import pickle
 import re
 from datetime import datetime
 from sentiment_api.schema import PredictionResponse, ReviewRequest
+
 # Load Train Model
 print("Loading Train Model...")
-with open("model/sentiment_model.pkl", "rb") as f:
+import os
+from pathlib import Path
+
+# Get the correct path whether running locally or in Docker
+BASE_DIR = Path(__file__).resolve().parent.parent
+MODEL_DIR = BASE_DIR / "model"
+
+# Load model
+model_path = MODEL_DIR / "sentiment_model.pkl"
+with open(model_path, 'rb') as f:
     model = pickle.load(f)
+
+# If you have separate preprocessor
+preprocessor_path = MODEL_DIR / "text_preprocessor.pkl"
+if preprocessor_path.exists():
+    with open(preprocessor_path, 'rb') as f:
+        preprocessor = pickle.load(f)
+
 print("Model Loaded Successfully! :)")
 
 # Initialize Fastapi APP

@@ -1,7 +1,9 @@
 fastapi
 uvicorn[standard]
 pydantic
+scikit-learn
+numpy
+pandas
 python-multipart
 python-jose[cryptography]
 passlib[bcrypt]
-scikit-learn

@@ -1,6 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
 scikit-learn
-pandas
 numpy
-matplotlib
-seaborn
-nltk
+pandas
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
