@@ -1,0 +1,8 @@
+{
+    "model": "Logistic Regression + TF-IDF",
+    "dataset": "IMDb 50K Reviews",
+    "accuracy": 0.8936,
+    "roc_auc": 0.9615,
+    "training_samples": 40000,
+    "testing_samples": 10000
+}
